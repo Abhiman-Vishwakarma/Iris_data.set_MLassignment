@@ -1,36 +1,54 @@
-# Iris_data.set_MLassignment
-Explanation of Harsh ML Assignment 1:
+_Iris Dataset Exploration_
 
-Step 1.Import Necessary Libraries: In python import pandas as pd from sklearn.datasets import load_iris
+_Step 1: Import Necessary Libraries_
 
-Purpose: Import the pandas library, which is essential for data manipulation and analysis, and load_iris from sklearn.datasets to access the Iris dataset.
+- Import the required libraries:
+    - `pandas` for data manipulation and analysis
+    - `load_iris` from scikit-learn for loading the Iris dataset
 
-Details: pandas is used to handle data in DataFrame format, which simplifies various data operations, while load_iris provides a convenient way to load the Iris dataset.
+_Code:_
+```
+import pandas as pd
+from sklearn.datasets import load_iris
+```
 
-Step 2. Load the Iris Dataset: python iris = load_iris()
+_Step 2: Load the Iris Dataset_
 
-Purpose: Load the Iris dataset into the variable iris.
+- Load the Iris dataset using `load_iris`
+- Convert the dataset into a Pandas DataFrame `iris_df` with feature names as columns
 
-Details: The load_iris function returns a dictionary-like object containing the data, feature names, and other metadata about the Iris dataset.
+_Code:_
+```
+iris = load_iris()
+iris_df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
+```
 
-Step 3.Convert to DataFrame: python iris_df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
+_Step 3: Display the First Five Rows_
 
-Purpose: Convert the data from the Iris dataset into a pandas DataFrame named iris_df.
+- Print the first five rows of the dataset using `head()`
 
-Details: iris.data contains the feature data, and iris.feature_names provides the column names. This conversion makes it easier to manipulate and analyze the data using DataFrame methods.
+_Code:_
+```
+print("First five rows of the dataset:")
+print(iris_df.head())
+```
 
-Step 4. Display the First Five Rows: python print("First five rows of the dataset:") print(iris_df.head())
+_Step 4: Display the Shape of the Dataset_
 
-Purpose: Display the first five rows of the DataFrame to get a preview of the dataset. Details: head() is a DataFrame method that returns the first five rows. This helps in quickly understanding the structure and content of the dataset.
+- Print the shape of the dataset (number of rows and columns) using `shape`
 
-Step 5.Display the Shape of the Dataset: python print("\nShape of the dataset:") print(iris_df.shape)
+_Code:_
+```
+print("\nShape of the dataset:")
+print(iris_df.shape)
+```
 
-Purpose: Show the dimensions (number of rows and columns) of the DataFrame.
+_Step 5: Display Summary Statistics_
 
-Details: shape is an attribute of the DataFrame that returns a tuple representing the number of rows and columns. This provides a quick overview of the dataset size.
+- Print summary statistics (mean, std, min, 25%, 50%, 75%, max) for each feature using `describe()`
 
-Step 6.Display Summary Statistics: python print("\nSummary statistics of the dataset:") print(iris_df.describe())
-
-Purpose: Provide summary statistics for each feature in the DataFrame.
-
-Details: describe() is a DataFrame method that computes summary statistics such as mean, standard deviation, minimum, and maximum values for numerical columns.This helps in understanding the distribution and range of feature values.
+_Code:_
+```
+print("\nSummary statistics of the dataset:")
+print(iris_df.describe())
+```
